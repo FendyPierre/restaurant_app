@@ -1,7 +1,7 @@
 volumes:
   restaurant_app_local_postgres_data: {}
   restaurant_app_local_postgres_data_backups: {}
-  
+
 
 services:
   django:
