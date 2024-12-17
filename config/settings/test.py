@@ -36,3 +36,9 @@ TEMPLATES[0]["OPTIONS"]["debug"] = True  # type: ignore[index]
 MEDIA_URL = "http://media.testserver"
 # Your stuff...
 # ------------------------------------------------------------------------------
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": ":memory:",
+    },
+}
