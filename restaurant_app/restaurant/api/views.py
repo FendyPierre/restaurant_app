@@ -27,7 +27,7 @@ class RestaurantByDateTimeAPIView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        restaurants = RestaurantSelector.get_restaurants_by_datetime(query_datetime)
+        restaurants = RestaurantSelector.get_restaurants_by_datetime(query_datetime).prefetch_related("operating_hours")
 
         return Response(
             {"open_restaurants": RestaurantSerializer(restaurants, many=True).data},
