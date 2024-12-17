@@ -63,7 +63,9 @@ class RestaurantByDateTimeAPIViewTests(TestCase):
         invalid_datetime = "2024-12-16 25:00:00"
         response = self.client.get(self.url, {"datetime": invalid_datetime})
         assert response.status_code == status.HTTP_400_BAD_REQUEST
-        assert response.data == {"error": "Invalid datetime format. Use YYYY-MM-DD HH:MM:SS"}
+        assert response.data == {
+            "error": "Invalid datetime format. Use YYYY-MM-DD HH:MM:SS",
+        }
 
     def test_valid_datetime_with_open_restaurants(self):
         valid_datetime = "2024-12-18 12:00:00"
